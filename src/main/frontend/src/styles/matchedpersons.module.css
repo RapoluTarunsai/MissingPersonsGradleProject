@@ -1,0 +1,111 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3498db;
+
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.error {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #dc3545;
+}
+
+.matchedGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.matchCard {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.matchCard:hover {
+    transform: scale(1.02);
+}
+
+.imageComparison {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.imageContainer {
+    flex: 1;
+    text-align: center;
+}
+
+.imageLabel {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.personImage {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 4px;
+}
+
+.matchInfo {
+    padding: 15px;
+}
+
+.personName {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.details {
+    font-size: 1rem;
+    color: #666;
+}
+
+.reportedBy,
+.foundBy {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #f1f3f5;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.matchDate {
+    font-style: italic;
+    color: #888;
+}
+
+.noResults {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 20px;
+}

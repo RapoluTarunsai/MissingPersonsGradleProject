@@ -1,0 +1,81 @@
+@startuml MissingPersonsModules
+
+skinparam componentStyle uml2
+skinparam backgroundColor white
+
+package "Frontend" #LightBlue {
+    [User Interface] as UI
+    note right of UI
+        - Dashboard Charts
+        - Missing Person Details
+        - Social Share
+        - Image Upload
+        - Profile Management
+        - Case Filters
+    end note
+}
+
+package "API Layer" #LightGreen {
+    [Authentication API] as AUTH
+    [Missing Person API] as MP
+    [Location Services] as LOC
+    note right of AUTH
+        - Login/Signup
+        - Password Encoder
+        - Captcha
+        - Reset Password
+    end note
+}
+
+package "Core Services" #Yellow {
+    [Face Recognition] as FR
+    [Email Service] as EMAIL
+    [News Service] as NEWS
+    [Profile Service] as PROFILE
+    [Case Management] as CASE
+    [Filter Service] as FILTER
+
+    note right of FR
+        Python Script:
+        - Face Detection
+        - Image Comparison
+        - Match Validation
+    end note
+
+    note right of CASE
+        - Add or Edit Missing Person
+        - Delete Case
+        - Update Status
+        - Move to Matched
+    end note
+
+    note right of FILTER
+        - Location Based
+        - Date Based
+        - Status Based
+        - Recently Added
+    end note
+}
+
+database "Oracle" as DB #Gray
+
+UI -down-> AUTH
+UI -down-> MP
+UI -down-> LOC
+
+AUTH -down-> FR
+MP -down-> FR
+MP -down-> EMAIL
+MP -down-> NEWS
+MP -down-> CASE
+MP -down-> FILTER
+MP -down-> PROFILE
+
+FR -down-> DB
+EMAIL -down-> DB
+NEWS -down-> DB
+CASE -down-> DB
+FILTER -down-> DB
+PROFILE -down-> DB
+
+@enduml

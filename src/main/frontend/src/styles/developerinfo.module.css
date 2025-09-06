@@ -1,0 +1,78 @@
+.developerContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.developerGrid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.developerCard {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.developerCard:hover {
+    transform: translateY(-10px);
+}
+
+.developerHeader {
+    margin-bottom: 15px;
+}
+
+.developerHeader h2 {
+    margin: 0;
+    color: #333;
+}
+
+.developerHeader p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.developerBio {
+    margin-bottom: 15px;
+}
+
+.techStack {
+    margin-bottom: 15px;
+}
+
+.techList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.techBadge {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.socialLinks a {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+    color: #007bff;
+}

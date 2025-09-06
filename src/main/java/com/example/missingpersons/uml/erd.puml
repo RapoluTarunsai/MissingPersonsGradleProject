@@ -1,0 +1,64 @@
+@startuml
+!define table(x) class x << (T,#FFAAAA) >>
+!define primary_key(x) <u>x</u>
+!define foreign_key(x) #x#
+
+table(USERS) {
+  primary_key(id): LONG <<PK>>
+  name: VARCHAR
+  email: VARCHAR
+  location: VARCHAR
+  password: VARCHAR
+  verificationCode: VARCHAR
+}
+
+table(MISSING_PERSONS) {
+  primary_key(id): LONG <<PK>>
+  name: VARCHAR
+  age: INTEGER
+  gender: VARCHAR
+  lastSeenLocation: VARCHAR
+  description: TEXT
+  foreign_key(reported_by_id): LONG <<FK to USERS.id>>
+  imageData: BLOB
+  reportedAt: TIMESTAMP
+  status: VARCHAR
+}
+
+table(MATCHED_PERSONS) {
+  primary_key(id): LONG <<PK>>
+  foreign_key(missing_person_id): LONG <<FK to MISSING_PERSONS.id>>
+  foreign_key(reported_by_id): LONG <<FK to USERS.id>>
+  foreign_key(found_by_id): LONG <<FK to USERS.id>>
+  matchedAt: TIMESTAMP
+  approved: BOOLEAN
+  matchedImageData: BLOB
+}
+
+table(COMMENTS) {
+  primary_key(id): LONG <<PK>>
+  content: VARCHAR
+  foreign_key(user_id): LONG <<FK to USERS.id>>
+  foreign_key(missing_person_id): LONG <<FK to MISSING_PERSONS.id>>
+  createdAt: TIMESTAMP
+}
+
+USERS "1" --o "*" COMMENTS : creates >
+USERS "1" --o "*" MISSING_PERSONS : reports >
+USERS "1" --o "*" MATCHED_PERSONS : reports >
+USERS "1" --o "*" MATCHED_PERSONS : finds >
+MISSING_PERSONS "1" --o "*" COMMENTS : has >
+MISSING_PERSONS "1" --o "0..1" MATCHED_PERSONS : matches >
+
+legend right
+  Symbol Meanings
+  ==
+  <<PK>> : Primary Key
+  <<FK to Table.column>> : Foreign Key Reference
+  1 : One record
+  * : Many records
+  0..1 : Zero or One record
+  --o : One-to-Many relationship
+  > : Direction of relationship
+endlegend
+@enduml

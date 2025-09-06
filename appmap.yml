@@ -1,0 +1,5 @@
+language: "java"
+name: "MissingPersonsGradleProject"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "com.example.missingpersons"

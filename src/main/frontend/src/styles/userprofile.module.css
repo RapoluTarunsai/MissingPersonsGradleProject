@@ -1,0 +1,275 @@
+.profileContainer {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileCard {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideIn 0.5s ease-out;
+}
+
+.profileCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.avatarSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.avatarImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatarIcon {
+    font-size: 80px;
+    color: #007bff;
+}
+
+.fileInput {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.avatar:hover .fileInput {
+    opacity: 1;
+}
+
+.fileInput::before {
+    content: '📷';
+    color: white;
+    font-size: 20px;
+}
+
+.fileInput input {
+    display: none;
+}
+
+
+.userDetails {
+    width: 100%;
+    text-align: center;
+}
+
+.userDetails h2 {
+    color: #2d3748;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.updateForm {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.formGroup {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.inputIcon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.input {
+    width: 80%;
+    padding: 15px 15px 15px 50px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.input:focus {
+    border-color: #4299e1;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.15);
+    outline: none;
+}
+
+.input:focus + .inputIcon {
+    color: #4299e1;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #4299e1, #667eea);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.submitButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(66, 153, 225, 0.2);
+}
+
+.submitButton:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.2em;
+    color: #4299e1;
+}
+
+.error {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff5f5;
+    color: #c53030;
+    border-radius: 12px;
+    text-align: center;
+    animation: shake 0.5s ease-in-out;
+}
+
+.noData {
+    text-align: center;
+    color: #718096;
+    font-size: 1.2em;
+    padding: 40px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@media (max-width: 768px) {
+    .profileCard {
+        padding: 30px 20px;
+    }
+
+    .userDetails h2 {
+        font-size: 1.8em;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .avatarIcon {
+        font-size: 40px;
+    }
+}
+.locationInputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 117%;
+}
+
+.locationInputGroup .inputIcon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.locationInputGroup .input {
+    padding-left: 45px;
+    width: 100%;
+}
+
+
+.locationButton {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    top: 20%;
+}

@@ -1,0 +1,94 @@
+.profileContainer {
+    min-height: calc(100vh - 64px); /* Account for navbar */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Match main app background */
+    padding: 40px 20px;
+    margin-top: 64px; /* Add space for navbar */
+}
+
+.profileCard {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+
+.profileHeader {
+    margin-bottom: 30px;
+}
+
+.profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #6a11cb;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.userName {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profileDetails {
+    text-align: left;
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.icon {
+    margin-right: 15px;
+    color: #6a11cb;
+    font-size: 24px;
+}
+
+.statsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    border-radius: 15px;
+    color: white;
+    width: 45%;
+    transition: all 0.3s ease;
+}
+
+.statIcon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.statNumber {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.statLabel {
+    font-size: 14px;
+    opacity: 0.8;
+}

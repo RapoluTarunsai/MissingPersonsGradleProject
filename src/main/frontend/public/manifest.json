@@ -1,0 +1,15 @@
+{
+  "short_name": "MissingPersons",
+  "name": "Missing Persons Application",
+  "icons": [
+    {
+      "src": "%PUBLIC_URL%/icons8-t-50.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,244 @@
+.discussionsContainer {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    color: #2d3748;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 50px;
+    height: 3px;
+    background: #4299e1;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.title:hover::after {
+    width: 100px;
+}
+
+.messageForm {
+    margin-bottom: 30px;
+}
+
+.messageInput {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    resize: vertical;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.messageInput:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    outline: none;
+}
+
+.submitButton {
+    background: #4299e1;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.submitButton:hover:not(:disabled) {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+.discussionsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.discussionCard {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+}
+
+.discussionCard:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.messageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.userName {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.1em;
+}
+
+.timestamp {
+    color: #718096;
+    font-size: 0.9em;
+}
+
+.messageContent {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.deleteButton {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #fc8181;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.discussionCard:hover .deleteButton {
+    opacity: 1;
+}
+
+.deleteButton:hover {
+    background: #f56565;
+    transform: scale(1.05);
+}
+
+.noDiscussions {
+    text-align: center;
+    color: #718096;
+    padding: 30px;
+    font-style: italic;
+    animation: fadeIn 1s ease-out;
+}
+
+.errorMessage {
+    background: #fff5f5;
+    color: #c53030;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@media (max-width: 768px) {
+    .discussionsContainer {
+        padding: 15px;
+    }
+
+    .messageHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .deleteButton {
+        opacity: 1;
+        position: static;
+        margin-top: 10px;
+    }
+}
+.inputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.voiceButton {
+    /*background-color: #3182ce;*/
+    background: none;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.voiceButton:hover {
+    background-color: #666;
+}
+
+.voiceButton.listening {
+    background-color: #e53e3e;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.voiceButton i {
+    font-size: 18px;
+}
+

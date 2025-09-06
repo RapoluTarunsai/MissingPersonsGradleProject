@@ -1,0 +1,972 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 40px 20px;
+}
+
+.detailsCard {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.detailsCard:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.imageContainer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.personImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.personImage:hover {
+    transform: scale(1.02);
+}
+
+.infoSection {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.infoItem {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-weight: 600;
+    color: #475569;
+    margin-right: 10px;
+}
+
+.value {
+    color: #1e293b;
+}
+
+.description {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.compareSection {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.captcha {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.compareTitle {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.uploadContainer {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.fileInput {
+    display: none;
+}
+
+.uploadButton, .compareButton {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.uploadButton {
+    background: #64748b;
+    color: white;
+}
+
+.uploadButton:hover {
+    background: #475569;
+}
+
+.compareButton {
+    background: #3b82f6;
+    color: white;
+    border: none;
+}
+
+.compareButton:hover:not(:disabled) {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.compareButton:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.previewContainer {
+    margin: 20px 0;
+}
+
+.comparePreview {
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+}
+
+.resultContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.similarityMeter {
+    height: 20px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.similarityFill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    transition: width 0.5s ease-out;
+}
+
+.similarityText {
+    color: #475569;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.matchResult {
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.matched {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.notMatched {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.error {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.discussionsSection {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .detailsCard {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .uploadContainer {
+        flex-direction: column;
+    }
+
+    .personImage {
+        width: 250px;
+        height: 250px;
+    }
+}
+.progressBar {
+    width: 100%;
+    height: 20px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #4299e1, #3182ce);
+    transition: width 0.3s ease;
+}
+
+.comparingText {
+    text-align: center;
+    color: #4a5568;
+    font-weight: 500;
+    margin-top: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+.map-container {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.map-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.map-container :global(.leaflet-container) {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.whatsappSection {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.whatsappSection h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.whatsappJoinButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: #25D366;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.whatsappJoinButton:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.2);
+}
+
+.whatsappJoinButton i {
+    font-size: 1.3rem;
+}
+
+.loadingGroup {
+    color: #666;
+    font-style: italic;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+.newsSection {
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.newsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.newsCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.newsCard:hover {
+    transform: translateY(-5px);
+}
+
+.newsCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.newsCard h3 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.newsCard a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007bff;
+    text-decoration: none;
+}
+.progressContainer {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 0.3s ease-in-out;
+}
+
+.progressText {
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+    color: #666;
+}
+.qrCodeSection {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.qrCodeSection h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.qrCodeSection canvas {
+    border: 8px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin: 10px auto;
+    transition: transform 0.3s ease;
+}
+
+.qrCodeSection canvas:hover {
+    transform: scale(1.02);
+}
+
+.qrCodeSection p {
+    color: #666;
+    margin-top: 12px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .qrCodeSection {
+        padding: 16px;
+        margin: 16px 0;
+    }
+
+    .qrCodeSection h3 {
+        font-size: 1.2rem;
+    }
+}
+
+.downloadSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.downloadButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.downloadButton:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.downloadButton i {
+    margin-right: 8px;
+}
+
+.videoSection {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.videoContainer {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.emotionalVideo {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.videoControls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.playPauseButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.playPauseButton:hover {
+    background-color: #45a049;
+}
+
+.videoProgressBar {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border-radius: 5px;
+}
+
+.videoProgressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.videoUploadContainer {
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.videoRecordingControls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.recordButton, .stopRecordingButton, .uploadButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+}
+
+.recordedVideoPreview {
+    max-width: 100%;
+    margin: 10px 0;
+}
+.uploadSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.fileInput {
+    display: none; /* Hide the actual file input */
+}
+
+.uploadButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.uploadButton:hover {
+    background-color: #45a049;
+}
+.videoRecordingControls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.recordOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.recordButton,
+.stopRecordingButton,
+.uploadButton,
+.cancelButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.recordedVideoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.recordedVideoActions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.recordedVideoPreview {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 10px 0;
+}
+
+.cancelButton {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.videoInstructions {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+.recordingPreview {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+
+.recordingVideoPreview {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transform: scaleX(-1); /* Mirror effect */
+}
+
+.stopRecordingButton {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.weatherSection {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.weatherTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.weatherContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.weatherMain {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weatherIcon {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.temperatureInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weatherDescription {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    opacity: 0.9;
+}
+
+.feelsLike {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.weatherDetails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    min-width: 300px;
+}
+
+.weatherItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.weatherItem:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.weatherItemIcon {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.weatherLoading {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #6c757d;
+}
+
+/* Responsive design for weather section */
+@media (max-width: 768px) {
+    .weatherContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .weatherMain {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .weatherDetails {
+        grid-template-columns: 1fr;
+        min-width: auto;
+    }
+
+    .temperature {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weatherSection {
+        padding: 15px;
+    }
+
+    .weatherIcon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .temperature {
+        font-size: 1.8rem;
+    }
+
+    .weatherItem {
+        padding: 8px 12px;
+    }
+}
+/* Time Section Styles */
+.timeLoading {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.timeSection {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    color: white;
+    box-shadow: 0 8px 32px rgba(108, 92, 231, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeDisplay {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.currentTime {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.timezoneInfo {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.timeDetails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.timeItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.timeItem:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeItemIcon {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeSection {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .timeTitle {
+        font-size: 1.2rem;
+    }
+
+    .currentTime {
+        font-size: 1.8rem;
+    }
+
+    .timeDetails {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .timeItem {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    .timeDisplay {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeSection {
+        padding: 12px;
+    }
+
+    .currentTime {
+        font-size: 1.5rem;
+    }
+
+    .timezoneInfo {
+        font-size: 1rem;
+    }
+
+    .timeItem {
+        padding: 8px 12px;
+    }
+
+    .timeItemIcon {
+        font-size: 1.1rem;
+    }
+}
+
+/* Loading animation */
+.timeLoading {
+    position: relative;
+    overflow: hidden;
+}
+
+.timeLoading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    .timeLoading {
+        background: #2d3748;
+        color: #a0aec0;
+    }
+}
+
+
+
+
+
+

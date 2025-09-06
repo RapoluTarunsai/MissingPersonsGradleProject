@@ -1,0 +1,156 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.statsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+
+.statCard {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 200px;
+}
+
+.storiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.storyCard {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.storyCard:hover {
+    transform: translateY(-5px);
+}
+
+.imageContainer {
+    display: flex;
+    height: 200px;
+}
+
+.personImage, .matchedImage {
+    width: 50%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.personImage:hover, .matchedImage:hover {
+    opacity: 0.9;
+}
+
+.storyContent {
+    padding: 1.5rem;
+}
+
+.timeline {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.location {
+    color: #2c3e50;
+    margin: 0.5rem 0;
+}
+.impactMetrics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0;
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+}
+
+.impactMetrics span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #555;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.impactMetrics span svg {
+    color: #4CAF50;
+    font-size: 1.1rem;
+}
+
+.impactMetrics span:nth-child(2) {
+    flex: 1;
+    font-style: italic;
+    color: #666;
+    background: #fff;
+    border-left: 3px solid #4CAF50;
+    border-radius: 4px;
+}
+
+.shareButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.shareButton:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.shareButton svg {
+    font-size: 1.1rem;
+}
+
+
+.loading {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .statsContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .storiesGrid {
+        grid-template-columns: 1fr;
+    }
+}

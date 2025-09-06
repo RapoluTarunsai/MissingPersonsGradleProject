@@ -1,0 +1,101 @@
+@startuml MissingPersonsSystem
+
+skinparam actorStyle awesome
+left to right direction
+
+actor "User" as user
+
+rectangle "User Operations" {
+    usecase "Sign Up" as UC1
+    usecase "Login" as UC2
+    usecase "Forgot Password" as UC3
+    usecase "View Dashboard" as UC4
+    usecase "Add Missing Person" as UC5
+    usecase "Edit Missing Person" as UC6
+    usecase "Delete Missing Person" as UC7
+    usecase "Compare Images" as UC8
+    usecase "View Missing Person Details" as UC9
+    usecase "Filter Missing Persons" as UC10
+    usecase "Upload Images" as UC11
+    usecase "Add Comments" as UC12
+    usecase "Approve Match" as UC13
+}
+
+rectangle "API Services" {
+    usecase "Authentication Service" as API1
+    usecase "Missing Person CRUD" as API2
+    usecase "Profile Management" as API3
+    usecase "News API Integration" as API4
+    usecase "Leaflet Maps Integration" as API5
+    usecase "Geocoding API" as API6
+    usecase "Google Captcha" as API7
+    usecase "Python Face Recognition" as API8
+    usecase "Email Service" as API9
+    usecase "Image Upload Service" as API10
+    usecase "Filter Service" as API11
+    usecase "Comments Service" as API12
+    usecase "Password Reset Service" as API13
+    usecase "Approve Match Service" as API14
+}
+
+actor "System" as system
+
+' User to Operations
+user --> UC1
+user --> UC2
+user --> UC3
+user --> UC4
+user --> UC5
+user --> UC6
+user --> UC7
+user --> UC8
+user --> UC9
+user --> UC10
+user --> UC11
+user --> UC12
+user --> UC13
+
+' Operations to API Services
+UC1 ..> API1 : <<include>>
+UC1 ..> API6 : <<include>>
+UC2 ..> API1 : <<include>>
+UC3 ..> API13 : <<include>>
+UC3 ..> API9 : <<include>>
+UC4 ..> API2 : <<include>>
+UC5 ..> API2 : <<include>>
+UC5 ..> API10 : <<include>>
+UC6 ..> API2 : <<include>>
+UC7 ..> API2 : <<include>>
+UC8 ..> API7 : <<include>>
+UC8 ..> API8 : <<include>>
+UC9 ..> API4 : <<include>>
+UC9 ..> API5 : <<include>>
+UC10 ..> API11 : <<include>>
+UC11 ..> API10 : <<include>>
+UC12 ..> API12 : <<include>>
+UC13 ..> API14 : <<include>>
+
+' System Triggers
+rectangle "System Triggers" {
+    usecase "Send Match Notifications" as ST1
+    usecase "Move to Matched Cases" as ST2
+    usecase "Process Face Recognition" as ST3
+    usecase "Send Reset Code" as ST4
+    usecase "Validate Face Count" as ST5
+}
+
+' System Connections
+API8 --> system
+API9 --> system
+API14 --> system
+
+system --> ST1
+system --> ST2
+system --> ST3
+system --> ST4
+system --> ST5
+
+note "Complete System Flow with All Connections" as N1
+N1 .. user
+
+@enduml

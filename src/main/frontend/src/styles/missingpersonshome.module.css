@@ -1,0 +1,412 @@
+.homeContainer {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
+    padding: 40px 20px;
+}
+
+.heroSection {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 0.8s ease-out;
+}
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.mainTitle {
+    margin: 0;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.welcomeText {
+    color: #4a90e2;
+    font-size: 1.8rem;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+
+.subtitle {
+    font-size: 1.2em;
+    color: #4a5568;
+}
+
+.searchSection {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.searchForm {
+    display: flex;
+    gap: 15px;
+}
+
+.searchInputWrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 15px;
+    color: #718096;
+    font-size: 1.2em;
+    z-index: 2;
+}
+
+
+.voiceSearchButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.searchInput {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.searchInput:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    outline: none;
+}
+
+.searchButton {
+    padding: 0 30px;
+    background: #4299e1;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #48bb78;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto 40px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+.addButton:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.personCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.personCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+}
+
+
+.imageWrapper {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+    background: #f7fafc;
+}
+
+.personImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.personCard:hover .personImage {
+    transform: scale(1.08);
+}
+
+.personInfo {
+    padding: 20px;
+    text-align: center;
+}
+
+.personInfo h3 {
+    margin: 0 0 15px;
+    color: #2d3748;
+    font-size: 1.3em;
+}
+
+.viewButton {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #4299e1;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.viewButton:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+.loadMoreButton {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 40px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loadMoreButton:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+}
+
+.loadingSpinner {
+    text-align: center;
+    padding: 40px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    animation: spin 1s linear infinite;
+}
+
+.noResults {
+    text-align: center;
+    padding: 60px 20px;
+    color: #718096;
+    animation: fadeIn 1s ease-out;
+}
+
+.noResultsIcon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    .mainTitle {
+        font-size: 2.5em;
+    }
+
+    .searchForm {
+        flex-direction: column;
+    }
+
+    .searchButton {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .gridContainer {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 10px;
+    }
+}
+.filterSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+
+.filterSelect {
+    min-width: 200px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.filterButton {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.filterButton:hover {
+    background: #0056b3;
+}
+.nearbySection {
+    margin: 40px 0;
+    padding: 20px;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nearbySection h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.nearbySection h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.nearbySection .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nearbySection .personCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.nearbySection .personCard:hover {
+    transform: translateY(-5px);
+}
+
+.nearbySection .imageWrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nearbySection .personInfo h3 {
+    color: #34495e;
+    margin: 12px 0;
+    font-size: 18px;
+}
