@@ -137,7 +137,7 @@ and open API integrations.
    ```cd src/main/frontend
    npm install
 6. Install suitable python packages for the image comparison feature:
-   ```pip install flask numpy opencv-python   
+   pip install flask numpy opencv-python   
 7. For more details check the Missing Person Controller where these python scripts were calling.
 8. Start the backend: `./gradlew bootRun`
 9. Access the application at `http://localhost:8080`.
