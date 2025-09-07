@@ -2,6 +2,8 @@
 
 A full-stack web application for managing missing persons cases, built with Spring Boot, React, Gradle, Oracle Database, 
 and open API integrations.
+
+You can find the documentation of this project [docs](https://github.com/RapoluTarunsai/MissingPersonsGradleProject/blob/master/docs/Traceback%20Doc.pdf)
 ## Table of Contents
 
 - [Technologies Used](#technologies-used)
